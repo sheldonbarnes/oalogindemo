@@ -2,9 +2,10 @@ var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy
 
 module.exports = function() {
+    
   passport.use(new TwitterStrategy({
-      consumerKey: 'i8niPyaQZsm5T8RQW6AL67oG9',
-      consumerSecret: 'QEqCWE2yzPpCMS47VDqwkp27pH8rnG1ohN41UcVu3FZ1WMCbT3',
+      consumerKey: process.env.TWITTER_CONSUMERKEY,
+      consumerSecret: process.env.TWITTER_CONSUMERSECRET,
       callbackUrl: 'http://localhost:3000/twitter/callback',
       passReqToCallBack: true
   }, function(req, token, tokenSecret, profile, done){
@@ -13,7 +14,7 @@ module.exports = function() {
       //user.email = profile.emails[0].value;
       console.log(profile);
       user.image = profile.photos[0].value;
-      user.image = profile._json.image.url;
+      //user.image = profile._json.image.url;
       user.displayName = profile.displayName;
 
       user.twitter = {};

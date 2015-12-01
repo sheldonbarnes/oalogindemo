@@ -12,11 +12,12 @@ module.exports = function() {
 
     var user = {};
 
+      console.log('Dumping profile');
     console.log(profile);
 
     //user.email = profile.emails[0].value;
-    console.log(profile);
-    //user.image = profile.photos[0].value;
+    //console.log(profile);
+    user.image = 'http://graph.facebook.com/v2.5/'+ profile.id + '/picture'
     //user.image = profile._json.image.url;
     user.displayName = profile.displayName;
 

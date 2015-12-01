@@ -3,6 +3,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.profilepic {
+    border-radius: 50%;    
+}
 .social a {
     text-align: center;
     font-size: 28px;

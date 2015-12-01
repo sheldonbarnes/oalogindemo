@@ -21,7 +21,7 @@ router.route('/google')
 
 router.route('/facebook')
   .get(passport.authenticate('facebook', {
-    scope: ['email']
+    scope: ['email','public_profile']
 
 }));
 
